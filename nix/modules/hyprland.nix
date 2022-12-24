@@ -30,6 +30,14 @@ let
 in
 {
 
+  nixpkgs.overlays = [
+    (self: super: {
+      waybar = super.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      });
+    })
+  ];
+
 
   environment.sessionVariables = rec {
     _JAVA_AWT_WM_NONREPARENTING = "1";
