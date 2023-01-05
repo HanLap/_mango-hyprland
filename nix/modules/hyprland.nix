@@ -49,7 +49,9 @@ in
     dbus-hyprland-environment
     configure-gtk
     waybar
+    wl-clipboard
     wofi
+
   ];
 
 
