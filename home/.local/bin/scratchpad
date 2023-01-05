@@ -1,0 +1,9 @@
+#/usr/bin/env bash
+
+class=$1
+
+if [[ -z $(hyprctl clients | grep "class: $class") ]]; then
+  hyprctl dispatch exec 'kitty --class scratch --title scratch'
+fi
+
+hyprctl dispatch togglespecialworkspace 0
