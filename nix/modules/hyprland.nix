@@ -20,11 +20,12 @@ let
     executable = true;
     text = let
       schema = pkgs.gsettings-desktop-schemas;
-      datadir = "${schema}/share/gesettings/schemas/${schema.name}";
+      datadir = "${schema}/share/gsettings/schemas/${schema.name}";
     in ''
       export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
       gnome_schema=org.gnome.desktop.interface
-      gesettings set $gnome_schema gtk-theme 'Adwaita-dark'
+      gsettings set $gnome_schema gtk-theme 'Adwaita-dark'
+      gsettings set $gnome_schema color-scheme 'prefer-dark'
     '';
   };
 in
@@ -48,6 +49,8 @@ in
   environment.systemPackages = with pkgs; [
     dbus-hyprland-environment
     configure-gtk
+    glib
+    gsettings-desktop-schemas
     waybar
     wl-clipboard
     wofi
@@ -62,4 +65,13 @@ in
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+  displayManager.defaultSession = "wrapped hr";
+  displayManager.session = [
+    {
+      manage = "desktop";
+      name = "wrapped hr";
+      start = ''exec $HOME/.local/bin/wrappedhr'';
+    }
+  ]
 }
