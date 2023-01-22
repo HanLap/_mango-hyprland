@@ -66,8 +66,8 @@ in
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  displayManager.defaultSession = "wrapped hr";
-  displayManager.session = [
+  xserver.displayManager.defaultSession = "wrapped hr";
+  xserver.displayManager.session = [
     {
       manage = "desktop";
       name = "wrapped hr";
