@@ -39,7 +39,6 @@ in
     })
   ];
 
-
   environment.sessionVariables = rec {
     _JAVA_AWT_WM_NONREPARENTING = "1";
     XCURSOR_SIZE = "24";
@@ -48,15 +47,11 @@ in
 
   environment.systemPackages = with pkgs; [
     dbus-hyprland-environment
-    configure-gtk
-    glib
-    gsettings-desktop-schemas
     waybar
     wl-clipboard
     wofi
 
   ];
-
 
   services.dbus.enable = true;
   xdg.portal = {
@@ -66,11 +61,4 @@ in
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  services.xserver.displayManager.session = [
-    {
-      manage = "desktop";
-      name = "wrapped-hr";
-      start = ''exec /home/hannah/.local/bin/wrappedhr'';
-    }
-  ];
 }
