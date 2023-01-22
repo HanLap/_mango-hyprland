@@ -69,8 +69,8 @@ in
   services.xserver.displayManager.session = [
     {
       manage = "desktop";
-      name = "wrapped hr";
-      start = ''exec $HOME/.local/bin/wrappedhr'';
+      name = "wrapped-hr";
+      start = ''exec /home/hannah/.local/bin/wrappedhr'';
     }
   ];
 }
