@@ -73,5 +73,5 @@ in
       name = "wrapped hr";
       start = ''exec $HOME/.local/bin/wrappedhr'';
     }
-  ]
+  ];
 }
