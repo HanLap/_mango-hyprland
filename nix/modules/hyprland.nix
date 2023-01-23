@@ -46,11 +46,12 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    configure-gtk
     dbus-hyprland-environment
     waybar
     wl-clipboard
     wofi
-
+    gnome.dconf-editor
   ];
 
   services.dbus.enable = true;
