@@ -47,6 +47,7 @@ in
 
   environment.systemPackages = with pkgs; [
     dbus-hyprland-environment
+    socat
     waybar
     wl-clipboard
     wofi

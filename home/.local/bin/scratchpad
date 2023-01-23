@@ -1,9 +1,44 @@
 #/usr/bin/env bash
 
-class=$1
+function wait_for_window {
+  local class=${1}
 
-if [[ -z $(hyprctl clients | grep "class: $class") ]]; then
-  hyprctl dispatch exec 'kitty --class scratch --title scratch'
-fi
+  while read line; do 
+      if [[ ${line:0:10} == "openwindow" ]]; then
+          found=$(echo $line | cut -d ',' -f 3) 
+          if [[ "$found" == "$class" ]]; then
+              return
+          fi
+      fi
+  done < <(socat - UNIX-CONNECT:/tmp/hypr/$(echo $HYPRLAND_INSTANCE_SIGNATURE)/.socket2.sock 2> /dev/null)
+}
 
-hyprctl dispatch togglespecialworkspace 0
+function scratch {
+    if [[ -z $(hyprctl clients | grep "class: scratch") ]]; then
+        kitty --class scratch --title scratch bash -c "hyprctl dispatch togglespecialworkspace scratch 1 > /dev/null; exec bash"
+    else
+        hyprctl dispatch togglespecialworkspace scratch
+    fi
+}
+
+function pavu {
+   if [[ -z $(hyprctl clients | grep "class: pavucontrol") ]]; then
+       pavucontrol &
+       wait_for_window "pavucontrol"
+       hyprctl dispatch togglespecialworkspace pavu 1
+   else
+       hyprctl dispatch togglespecialworkspace pavu
+   fi
+}
+
+function bw {
+   if [[ -z $(hyprctl clients | grep "class: Bitwarden") ]]; then
+       bitwarden &
+       wait_for_window "Bitwarden"
+       hyprctl dispatch togglespecialworkspace bw 1
+   else
+       hyprctl dispatch togglespecialworkspace bw
+   fi
+}
+
+"$@"
