@@ -92,6 +92,10 @@ button:hover {
   border-radius: .5em;
   /* border: #64727D 1px solid; */
   margin: 0.2em 0;
+  border: 2px solid;
+  color: white;
+  background-color: rgba(10,10,10,0.3);
+  /*background-color: #224;*/
 }
 
 #window,
@@ -110,29 +114,26 @@ button:hover {
 }
 
 #clock {
-  background-color: #64727D;
+  border-color: #64727D;
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
+  border-color: #ffffff;
 }
 
 #battery.charging, #battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+  border-color: #26A65B;
 }
 
 @keyframes blink {
   to {
-      background-color: #ffffff;
+      border-color: #ffffff;
       color: #000000;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  border-color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -145,65 +146,61 @@ label:focus {
 }
 
 #cpu {
-  border: 2px solid #2ecc71;
-  color: white;
-  background-color: rgba(0,0,0,0.3);
+  border-color: #2ecc71;
 }
 
 #memory {
-  background-color: #9b59b6;
+  border-color: #9b59b6;
 }
 
 #disk {
-  background-color: #964B00;
+  border-color: #964B00;
 }
 
 #backlight {
-  background-color: #90b1b1;
+  border-color: #90b1b1;
 }
 
 #network {
-  background-color: #2980b9;
+  border-color: #2980b9;
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  border-color: #f53c3c;
 }
 
 #pulseaudio {
-  background-color: #f1c40f;
-  color: #000000;
+  border-color: #f1c40f;
 }
 
 #pulseaudio.muted {
-  background-color: #90b1b1;
-  color: #2a5c45;
+  border-color: #90b1b1;
 }
 
 #custom-media {
-  background-color: #66cc99;
+  border-color: #66cc99;
   color: #2a5c45;
   min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-  background-color: #66cc99;
+  border-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-  background-color: #ffa000;
+  border-color: #ffa000;
 }
 
 #temperature {
-  background-color: #f0932b;
+  border-color: #f0932b;
 }
 
 #temperature.critical {
-  background-color: #eb4d4b;
+  border-color: #eb4d4b;
 }
 
 #tray {
-  background-color: #2980b9;
+  border-color: #05ab84;
 }
 
 #tray > .passive {
@@ -225,8 +222,7 @@ label:focus {
 }
 
 #mpd {
-  background-color: #66cc99;
-  color: #2a5c45;
+  border-color: #66cc99;
 }
 
 #mpd.disconnected {
