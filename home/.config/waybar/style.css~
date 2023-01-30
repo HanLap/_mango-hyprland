@@ -85,8 +85,11 @@ button:hover {
 }
 
 
+.modules-left {
+  background-color: rgba(10,10,10,0.3);
+}
 
-.modules-left, .modules-right {
+.modules-right {
   padding: 0 10px;
   color: #ffffff;
   border-radius: .5em;
