@@ -78,6 +78,7 @@ button:hover {
 #workspaces,
 #mpd {
   /*background-color: #224;*/
+  padding: 0 10px;
 }
 
 #window {
@@ -85,11 +86,10 @@ button:hover {
 }
 
 .modules-left, .modules-right {
-  padding: 0 10px;
   color: #ffffff;
   border-radius: .5em;
   /* border: #64727D 1px solid; */
-  margin: 0.2em;
+  Margin: 0.2em;
   /*border: 2px solid; */
   color: white;
   background-color: rgba(10,10,10,0.3);
