@@ -93,6 +93,7 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#workspaces,
 #mpd {
   padding: 0 10px;
   color: #ffffff;
