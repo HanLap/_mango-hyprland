@@ -77,16 +77,23 @@ button:hover {
 #scratchpad,
 #mpd {
   padding: 0 5px;
+  min-width: 2.5em;
 }
 
-.modules-left, .modules-center, .modules-right {
+.modules-left, 
+#window, 
+.modules-right {
   color: #ffffff;
   border-radius: .5em;
-  /* border: #64727D 1px solid; */
   margin: 0.2em;
   /*border: 2px solid; */
   color: white;
   background-color: rgba(10,10,10,0.3);
+}
+
+#window {
+  min-width: 30em;
+  padding: 0 1em;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
