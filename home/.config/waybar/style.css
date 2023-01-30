@@ -52,7 +52,7 @@ button:hover {
 #workspaces {
   background: <#{BAR_COLOR_RGBA}#>;
   padding: 0 5px;
-  border-radius: 0.5em;
+  /* border-radius: 0.5em; */
 }
 
 #workspaces button {
