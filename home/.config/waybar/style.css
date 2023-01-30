@@ -84,9 +84,9 @@ button:hover {
   margin: 0 4px;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
+
+.modules-left {
+  background-color: rgba(10,10,10,0.3);
 }
 
 .modules-right {
