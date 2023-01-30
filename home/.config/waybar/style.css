@@ -79,11 +79,7 @@ button:hover {
   padding: 0 5px;
 }
 
-.modules-center {
-  background-color: rgba(10,10,10,0.3);
-}
-
-.modules-left, .modules-right {
+.modules-left, .modules-center, .modules-right {
   color: #ffffff;
   border-radius: .5em;
   /* border: #64727D 1px solid; */
