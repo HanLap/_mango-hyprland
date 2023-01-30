@@ -50,7 +50,7 @@ button:hover {
 }
 
 #workspaces {
-  background: <#{BAR_COLOR_RGBA}#>;
+  /* background: <#{BAR_COLOR_RGBA}#>; */
   padding: 0 5px;
   /* border-radius: 0.5em; */
 }
