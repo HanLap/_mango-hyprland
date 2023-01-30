@@ -88,8 +88,7 @@ button:hover {
   /*background-color: #224;*/
 }
 
-#window,
-#workspaces {
+#window {
   margin: 0 4px;
 }
 
