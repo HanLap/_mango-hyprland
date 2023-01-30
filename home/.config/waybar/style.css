@@ -40,7 +40,6 @@ button {
   /* Avoid rounded borders under each button name */
   border: none;
   border-radius: 0;
-
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -50,7 +49,7 @@ button:hover {
 }
 
 #workspaces {
-  background: black;
+  background: <#{BAR_COLOR_RGBA}#>;
 }
 
 #workspaces button {
