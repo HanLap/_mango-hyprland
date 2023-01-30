@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+CONFIG_FILES="$HOME/.config/hypr/hyprpaper.conf"
+
+trap "kill $(pgrep hyprpaper)" EXIT
+
+
+while true; do
+    hyprpaper &
+    inotifywait -e create,modify $CONFIG_FILES
+    kill $(pgrep hyprpaper)
+done
