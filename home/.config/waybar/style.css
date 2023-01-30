@@ -80,7 +80,7 @@ button:hover {
 }
 
 .modules-center {
-  background: black;
+  background-color: rgba(10,10,10,0.3);
 }
 
 .modules-left, .modules-right {
