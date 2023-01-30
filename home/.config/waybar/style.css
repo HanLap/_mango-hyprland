@@ -77,14 +77,6 @@ button:hover {
 #scratchpad,
 #workspaces,
 #mpd {
-  padding: 0 10px;
-  color: #ffffff;
-  border-radius: .5em;
-  /* border: #64727D 1px solid; */
-  margin: 0.2em 0;
-  /*border: 2px solid; */
-  color: white;
-  background-color: rgba(10,10,10,0.3);
   /*background-color: #224;*/
 }
 
@@ -98,6 +90,13 @@ button:hover {
 }
 
 .modules-right {
+  padding: 0 10px;
+  color: #ffffff;
+  border-radius: .5em;
+  /* border: #64727D 1px solid; */
+  margin: 0.2em 0;
+  /*border: 2px solid; */
+  color: white;
   background-color: rgba(10,10,10,0.3);
 }
 
