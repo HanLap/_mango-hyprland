@@ -75,10 +75,9 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#workspaces,
 #mpd {
   /*background-color: #224;*/
-  padding: 0 10px;
+  padding: 0 5px;
 }
 
 #window {
