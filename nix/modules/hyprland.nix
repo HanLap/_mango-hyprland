@@ -51,8 +51,8 @@ in
       variant = "mocha";
     })
     dbus-hyprland-environment
-    socat
-    waybar
+    nsocat
+    waybar-hyprland
     wl-clipboard
     wofi
   ];
