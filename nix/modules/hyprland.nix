@@ -31,38 +31,44 @@ let
 in
 {
 
-#  nixpkgs.overlays = [
-#    (self: super: {
-#      waybar = super.waybar.overrideAttrs (oldAttrs: {
-#        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#      });
+  nixpkgs.overlays = [
+    (self: super: {
+      waybar = super.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      });
+    })
+  ];
+
+  environment.sessionVariables = rec {
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+    XCURSOR_SIZE = "24";
+#    GTK_THEME = "Catppuccin-Mocha-Standard-Pink-Dark";
+  };
+
+  environment.systemPackages = with pkgs; [
+#    (catppuccin-gtk.override {
+#      accents = ["pink"];
+#      variant = "mocha";
 #    })
-#  ];
-#
-#  environment.sessionVariables = rec {
-#    _JAVA_AWT_WM_NONREPARENTING = "1";
-#    XCURSOR_SIZE = "24";
-##    GTK_THEME = "Catppuccin-Mocha-Standard-Pink-Dark";
-#  };
-#
-#  environment.systemPackages = with pkgs; [
-##    (catppuccin-gtk.override {
-##      accents = ["pink"];
-##      variant = "mocha";
-##    })
-#    configure-gtk
+    configure-gtk
 #    dbus-hyprland-environment
-#    socat
-#    wl-clipboard
-#    wofi
-#  ];
-#
-#  services.dbus.enable = true;
-#  xdg.portal = {
-#    enable = true;
-#    wlr.enable = true;
-#    # gtk portal needed to make gtk apps happy
-#    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-#  };
+    grimblast
+    hyprpaper
+    hyprpicker
+    socat
+    waybar
+    wl-clipboard
+    wofi
+  ];
+
+  programs.hyprland.enable = true;
+
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
 }
