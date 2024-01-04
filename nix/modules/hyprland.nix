@@ -51,7 +51,7 @@ in
 #      variant = "mocha";
 #    })
     configure-gtk
-#    dbus-hyprland-environment
+    dbus-hyprland-environment
     grimblast
     hyprpaper
     hyprpicker
@@ -61,14 +61,20 @@ in
     wofi
   ];
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk 
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
 }
